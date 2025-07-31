@@ -1,7 +1,7 @@
 const Header: React.FC = () => {
   return (
     <header>
-      <p>ヘッダー</p>
+      <p className='bg-red-500'>ヘッダー</p>
     </header>
   );
 };
