@@ -42,7 +42,7 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-brown hover:text-yellow-900"
+      className="text-brand-brown hover:text-yellow-900"
     >
       {children}
     </a>
@@ -154,7 +154,7 @@ const Home: React.FC<HomeProps> = ({
     <div className="pb-6 sm:pb-8 lg:pb-12">
       <div className="mx-auto max-w-screen-2xl md:px-8">
         <div className="flex flex-col justify-between gap-6 sm:gap-10 md:flex-row md:gap-16">
-          <div className="xl:w-7/12 flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:py-24">
+          <div className="xl:w-7/12 flex flex-col justify-center lg:py-12 text-left xl:py-24">
             <h1 className="mb-8 font-serif text-xl text-gray-600 md:mb-12 lg:text-5xl">
               ここから始まるデザインがある。
             </h1>
@@ -164,7 +164,7 @@ const Home: React.FC<HomeProps> = ({
             </p>
 
             <button
-              className="mb-8 font-serif text-brown hover:text-yellow-900 md:mb-12 md:text-xl"
+              className="mb-8 self-start text-left font-serif text-brand-brown hover:text-yellow-900 md:mb-12 md:text-xl"
               onClick={() => setShowModal(true)}
             >
               情報をピックアップする
@@ -240,7 +240,7 @@ const Home: React.FC<HomeProps> = ({
             <div className="font-serif mb-8 flex flex-row items-center justify-start gap-2 lg:gap-8 md:mb-0">
               <input
                 type="text"
-                placeholder="キーワード検索"
+                placeholder="タイトル検索"
                 className="w-64 rounded-lg border border-zinc-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-emerald-500"
               />
               <button className="rounded-lg bg-emerald-700 px-4 py-2 text-white hover:bg-emerald-600">
@@ -303,7 +303,7 @@ const Home: React.FC<HomeProps> = ({
 
       {/* おすすめセクション */}
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-        <div className="pt-16 text-center font-serif text-brown text-lg md:pt-36 md:text-xl lg:text-3xl">
+        <div className="pt-16 text-center font-serif text-brand-brown text-lg md:pt-36 md:text-xl lg:text-3xl">
           あなたにおすすめの情報
         </div>
 
@@ -329,7 +329,7 @@ const Home: React.FC<HomeProps> = ({
         )}
 
         {/* 高評価の情報 */}
-        <div className="pt-16 text-center font-serif text-brown text-lg md:pt-36 md:text-xl lg:text-3xl">
+        <div className="pt-16 text-center font-serif text-brand-brown text-lg md:pt-36 md:text-xl lg:text-3xl">
           高評価の情報
         </div>
         <div className="container mx-auto mt-12 grid gap-8 pb-16 pt-3 sm:grid-cols-2 md:mt-20 md:gap-12 xl:grid-cols-3 xl:gap-16">
@@ -346,8 +346,8 @@ const Home: React.FC<HomeProps> = ({
                 key={label}
                 className={`tab rounded-lg font-serif md:text-2xl ${
                   activeTab === idx
-                    ? "is-active mb-4 text-gray-500"
-                    : "not-active mb-4 text-gray-500 hover:text-brown"
+                    ? "is-active mb-4 text-brand-brown bg-white shadow-md"
+                    : "not-active mb-4 text-gray-500 hover:text-brand-brown"
                 }`}
                 aria-current={activeTab === idx ? "page" : undefined}
                 onClick={() => setActiveTab(idx as 0 | 1 | 2)}
@@ -388,7 +388,7 @@ const Home: React.FC<HomeProps> = ({
                       幅広く学ぶことができます。まずはこちらのサービスでwebデザインの基本に触れてみましょう。
                       <br />
                     </p>
-                    <div className="font-serif text-brown hover:text-yellow-900 lg:text-xl">
+                    <div className="font-serif text-brand-brown hover:text-yellow-900 lg:text-xl">
                       <ExternalLink href="https://chot.design/">・chot.design</ExternalLink>
                     </div>
                     <br />
@@ -446,7 +446,7 @@ const Home: React.FC<HomeProps> = ({
                       学んでいてとても楽しくなりますよ。
                       <br />
                     </p>
-                    <div className="font-serif text-brown hover:text-yellow-900 lg:text-xl">
+                    <div className="font-serif text-brand-brown hover:text-yellow-900 lg:text-xl">
                       <ExternalLink href="https://www.amazon.co.jp/1%E5%86%8A%E3%81%A7%E3%81%99%E3%81%B9%E3%81%A6%E8%BA%AB%E3%81%AB%E3%81%A4%E3%81%8FHTML-CSS%E3%81%A8Web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80%E8%AC%9B%E5%BA%A7-Mana/dp/4797398892">
                         ・1冊ですべて身につくHTML&CSSとWebデザイン入門講座
                       </ExternalLink>
@@ -468,7 +468,7 @@ const Home: React.FC<HomeProps> = ({
                       以下ページなどを参考に勉強しましょう。
                       <br />
                     </p>
-                    <div className="flex flex-col font-serif text-brown lg:text-xl">
+                    <div className="flex flex-col font-serif text-brand-brown lg:text-xl">
                       <ExternalLink href="https://japan-design.jp/design/0068/">
                         ・WEBデザイナー必見！著作権を侵害しないために注意すべきこと！
                       </ExternalLink>
@@ -517,7 +517,7 @@ const Home: React.FC<HomeProps> = ({
                       色々と触れてみることで自分に合うものが見つかるはずです。
                       <br />
                     </p>
-                    <div className="flex flex-col font-serif text-brown lg:text-xl">
+                    <div className="flex flex-col font-serif text-brand-brown lg:text-xl">
                       <ExternalLink href="https://www.sejuku.net/blog/105585">
                         ・無料で使えるWebデザインツールおすすめ8選【2023年版】
                       </ExternalLink>
@@ -544,7 +544,7 @@ const Home: React.FC<HomeProps> = ({
                       作り方をしっかり学んでいきましょう。
                       <br />
                     </p>
-                    <div className="flex flex-col font-serif text-brown lg:text-xl">
+                    <div className="flex flex-col font-serif text-brand-brown lg:text-xl">
                       <ExternalLink href="https://www.sejuku.net/blog/99964">
                         ・CSSでスマホ対応！レスポンシブサイトの作り方と初心者向けQ&A
                       </ExternalLink>
@@ -574,7 +574,7 @@ const Home: React.FC<HomeProps> = ({
                       考えながら見ることで視野も広がっていくでしょう。
                       <br />
                     </p>
-                    <div className="flex flex-col font-serif text-brown lg:text-xl">
+                    <div className="flex flex-col font-serif text-brand-brown lg:text-xl">
                       <ExternalLink href="https://webdesignclip.com/">
                         ・WebDesignClip｜Webサイト制作の参考になる日本のWebデザインリンク集
                       </ExternalLink>
@@ -601,7 +601,7 @@ const Home: React.FC<HomeProps> = ({
                       まずはUI/UXについて知識から深めていきましょう。
                       <br />
                     </p>
-                    <div className="flex flex-col font-serif text-brown lg:text-xl">
+                    <div className="flex flex-col font-serif text-brand-brown lg:text-xl">
                       <ExternalLink href="https://shiftasia.com/ja/column/ui-ux%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B/">
                         ・UI/UXとは｜UIとUXそれぞれの意味や違い、改善方法についてわかりやすく解説
                       </ExternalLink>
@@ -647,7 +647,7 @@ const Home: React.FC<HomeProps> = ({
                       以下の情報を参考にまずは概要を掴んでいきましょう。
                       <br />
                     </p>
-                    <div className="flex flex-col font-serif text-brown lg:text-xl">
+                    <div className="flex flex-col font-serif text-brand-brown lg:text-xl">
                       <ExternalLink href="https://www.xserver.ne.jp/bizhp/homepage-seo/">
                         ・SEO対策とは？ホームページ初心者が制作時に意識すべきポイント6つ
                       </ExternalLink>
@@ -670,7 +670,7 @@ const Home: React.FC<HomeProps> = ({
                       Webに関わる人なら誰もが知っておいて損はないことなので基本だけでも抑えておきましょう。
                       <br />
                     </p>
-                    <div className="flex flex-col font-serif text-brown lg:text-xl">
+                    <div className="flex flex-col font-serif text-brand-brown lg:text-xl">
                       <ExternalLink href="https://mieru-ca.com/blog/web_marketing/">
                         ・Webマーケティングとは？【初心者向け】基礎知識と成果の上げ方
                       </ExternalLink>
@@ -700,7 +700,7 @@ const Home: React.FC<HomeProps> = ({
                       ブランディングに対する意識も持っておくようにしましょう。
                       <br />
                     </p>
-                    <div className="flex flex-col font-serif text-brown lg:text-xl">
+                    <div className="flex flex-col font-serif text-brand-brown lg:text-xl">
                       <ExternalLink href="https://trasp-inc.com/blog/marketing/branding/web-branding/">
                         ・これだけ読めば大丈夫！Webブランディングの基本から実践4ステップ
                       </ExternalLink>
