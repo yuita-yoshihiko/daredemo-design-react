@@ -1,9 +1,18 @@
+import { Link } from "react-router-dom";
+
 const Header: React.FC = () => {
+  const MENU = [
+    { label: 'トレンド情報', to: '/trend' },
+    { label: 'カラー抽出',   to: '#' },
+    { label: 'UI・UXクイズ',  to: '#' },
+    { label: 'Design Trip',  to: '#' },
+  ] as const;
+  
   return (
     <header className="container mx-auto flex items-center justify-between font-serif py-4 md:py-8 mb-8 md:mb-12 xl:mb-16">
       {/* ロゴ（見た目だけ。リンク先は #） */}
       <a
-        href="#"
+        href="/"
         aria-label="logo"
         className="inline-flex items-center ml-2 lg:ml-0 text-zinc-800 text-md md:text-3xl font-bold gap-2.5"
       >
@@ -24,15 +33,15 @@ const Header: React.FC = () => {
             role="menu"
             className="absolute right-0 mt-2 hidden w-60 rounded-lg bg-white p-2 text-sm shadow group-hover:block"
           >
-            {['トレンド情報', 'カラー抽出', 'UI・UXクイズ', 'Design Trip'].map((label) => (
-              <li key={label}>
-                <a
-                  href="#"
+            {MENU.map((item) => (
+              <li key={item.label}>
+                <Link
+                  to={item.to}
                   className="block rounded px-3 py-2 text-gray-500 hover:bg-green-50 hover:text-green-800 active:bg-white active:text-green-900"
                   role="menuitem"
                 >
-                  {label}
-                </a>
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
