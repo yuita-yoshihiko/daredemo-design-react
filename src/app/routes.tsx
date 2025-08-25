@@ -4,6 +4,7 @@ import Home from '@/features/home/routes/Home';
 import Trend from '@/features/trend/routes/Trend';
 import Quiz from '@/features/quiz/routes/Quiz';
 import Color from '@/features/color/routes/Color';
+import Trip from '@/features/trip/routes/Trip';
 
 export function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ export function AppRoutes() {
         <Route path="/trend" element={<Trend />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/color" element={<Color />} />
+        <Route path="/trip" element={<Trip />} />
       </Route>
     </Routes>
   );

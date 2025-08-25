@@ -5,7 +5,7 @@ const Header: React.FC = () => {
     { label: 'トレンド情報', to: '/trend' },
     { label: 'カラー抽出',   to: '/color' },
     { label: 'UI・UXクイズ',  to: '/quiz' },
-    { label: 'Design Trip',  to: '#' },
+    { label: 'Design Trip',  to: '/trip' },
   ] as const;
   
   return (
