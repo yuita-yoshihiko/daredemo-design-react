@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomeLayout from '@/components/layout/HomeLayout';
 import Home from '@/features/home/routes/Home';
 import Trend from '@/features/trend/routes/Trend';
+import Quiz from '@/features/quiz/routes/Quiz';
 
 export function AppRoutes() {
   return (
@@ -9,6 +10,7 @@ export function AppRoutes() {
       <Route element={<HomeLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/trend" element={<Trend />} />
+        <Route path="/quiz" element={<Quiz />} />
       </Route>
     </Routes>
   );

@@ -4,7 +4,7 @@ const Header: React.FC = () => {
   const MENU = [
     { label: 'トレンド情報', to: '/trend' },
     { label: 'カラー抽出',   to: '#' },
-    { label: 'UI・UXクイズ',  to: '#' },
+    { label: 'UI・UXクイズ',  to: '/quiz' },
     { label: 'Design Trip',  to: '#' },
   ] as const;
   
