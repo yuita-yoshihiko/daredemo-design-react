@@ -21,7 +21,7 @@ const Header: React.FC = () => {
 
       <div className="flex items-center gap-4">
         {/* サブコンテンツ ドロップダウン */}
-        <div className="relative group">
+        <div className="relative group pt-2">
           <button
             className="text-green-800 hover:text-green-600 text-xs md:text-base tracking-tight md:tracking-normal"
             aria-haspopup="menu"
@@ -31,13 +31,13 @@ const Header: React.FC = () => {
           </button>
           <ul
             role="menu"
-            className="absolute right-0 mt-2 hidden w-60 rounded-lg bg-white p-2 text-sm shadow group-hover:block"
+            className="absolute right-0 top-full hidden w-60 rounded-lg bg-white p-2 text-sm shadow group-hover:block"
           >
             {MENU.map((item) => (
               <li key={item.label}>
                 <Link
                   to={item.to}
-                  className="block rounded px-3 py-2 text-gray-500 hover:bg-green-50 hover:text-green-800 active:bg-white active:text-green-900"
+                  className="block rounded px-3 py-2 text-gray-500 hover:bg-gray-200 hover:text-green-800 active:bg-white active:text-green-900"
                   role="menuitem"
                 >
                   {item.label}
@@ -93,13 +93,13 @@ const Header: React.FC = () => {
 
             <ul
               role="menu"
-              className="absolute right-0 mt-2 hidden w-52 rounded-lg bg-white p-1 text-sm font-normal shadow group-hover:block"
+              className="absolute right-0 top-full hidden w-52 rounded-lg bg-white p-1 text-sm font-normal shadow group-hover:block"
             >
               {['全てのお気に入り', 'お気に入りリスト', 'ログアウト'].map((label) => (
                 <li key={label}>
                   <a
                     href="#"
-                    className="block rounded px-3 py-2 text-gray-500 hover:bg-green-50 hover:text-green-800 active:bg-white active:text-green-900"
+                    className="block rounded px-3 py-2 text-gray-500 hover:bg-gray-200 hover:text-green-800 active:bg-white active:text-green-900"
                     role="menuitem"
                   >
                     {label}
