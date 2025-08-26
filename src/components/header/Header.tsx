@@ -7,6 +7,12 @@ const Header: React.FC = () => {
     { label: 'UI・UXクイズ',  to: '/quiz' },
     { label: 'Design Trip',  to: '/trip' },
   ] as const;
+
+  const USERMENU = [
+    { label: '全てのお気に入り', to: '/design_tip/favorite' },
+    { label: 'お気に入りリスト',   to: '#' },
+    { label: 'ログアウト',  to: '#' },
+  ] as const;
   
   return (
     <header className="container mx-auto flex items-center justify-between font-serif py-4 md:py-8 mb-8 md:mb-12 xl:mb-16">
@@ -95,15 +101,15 @@ const Header: React.FC = () => {
               role="menu"
               className="absolute right-0 top-full hidden w-52 rounded-lg bg-white p-1 text-sm font-normal shadow group-hover:block"
             >
-              {['全てのお気に入り', 'お気に入りリスト', 'ログアウト'].map((label) => (
-                <li key={label}>
-                  <a
-                    href="#"
+              {USERMENU.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.to}
                     className="block rounded px-3 py-2 text-gray-500 hover:bg-gray-200 hover:text-green-800 active:bg-white active:text-green-900"
                     role="menuitem"
                   >
-                    {label}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
