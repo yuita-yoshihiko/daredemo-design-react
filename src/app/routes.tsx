@@ -11,6 +11,7 @@ import ListDesignTip from '@/features/design_tips/routes/ListDesignTip';
 import Notification from '@/features/notifications/routes/Notification';
 import SignUp from '@/features/auth/routes/SignUp';
 import Login from '@/features/auth/routes/Login';
+import PasswordReset from '@/features/auth/routes/PasswordReset';
 
 export function AppRoutes() {
   return (
@@ -27,6 +28,7 @@ export function AppRoutes() {
         <Route path="/notification" element={<Notification />} />
         <Route path="/sign_up" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/password_reset" element={<PasswordReset />} />
       </Route>
     </Routes>
   );

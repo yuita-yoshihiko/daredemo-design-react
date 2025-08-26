@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SignUp: React.FC = () => {
   return <>
     <div className="flex justify-center font-serif">
@@ -26,7 +28,9 @@ const SignUp: React.FC = () => {
                 <br />
                 Googleログイン
                 <br />
-                ログインページへ
+                <Link to="/login" className="text-gray-400 hover:text-green-800 active:text-green-900">
+                  ログインページへ
+                </Link>
               </div>
             </div>
           </div>

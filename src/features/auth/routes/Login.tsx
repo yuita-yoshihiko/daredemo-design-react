@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Login: React.FC = () => {
   return <>
     <div className="flex justify-center font-serif">
@@ -20,9 +22,13 @@ const Login: React.FC = () => {
                 <br />
                 Googleログイン
                 <br />
-                ユーザー登録ページへ
+                <Link to="/sign_up" className="text-gray-400 hover:text-green-800 active:text-green-900">
+                  ユーザー登録ページへ
+                </Link>
                 <br />
-                パスワードをお忘れの方はこちら
+                <Link to="/password_reset" className="text-gray-400 hover:text-green-800 active:text-green-900">
+                  パスワードをお忘れの方はこちら
+                </Link>
               </div>
             </div>
           </div>
