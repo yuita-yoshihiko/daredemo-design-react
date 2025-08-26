@@ -54,25 +54,16 @@ const Header: React.FC = () => {
         </div>
 
         {/* 通知アイコン（見た目のみ） */}
-        <button
+        <Link
+          to="/notification"
           aria-label="notifications"
           className="relative grid h-10 w-10 place-items-center text-green-800 hover:text-green-700"
         >
-          
-          {/* ベルの簡易SVG */}
-          <svg
-            className="h-6 w-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
+          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M6.5 9a5.5 5.5 0 0 1 11 0c0 6 2 7 2 7H4.5s2-1 2-7" />
             <path d="M10 19a2 2 0 0 0 4 0" />
           </svg>
-        </button>
+        </Link>
 
         {/* ユーザメニュー（丸アイコン + ドロップダウン） */}
         <nav className="text-sm md:text-lg font-semibold items-center mr-2 lg:mr-0">
