@@ -9,6 +9,7 @@ import DesignTip from '@/features/design_tips/routes/DesignTip';
 import FavoriteDesignTip from '@/features/design_tips/routes/FavoriteDesignTip';
 import ListDesignTip from '@/features/design_tips/routes/ListDesignTip';
 import Notification from '@/features/notifications/routes/Notification';
+import SignUp from '@/features/auth/routes/SignUp';
 
 export function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ export function AppRoutes() {
         <Route path="/design_tip/favorite" element={<FavoriteDesignTip />} />
         <Route path="/design_tip/list" element={<ListDesignTip />} />
         <Route path="/notification" element={<Notification />} />
+        <Route path="/sign_up" element={<SignUp />} />
       </Route>
     </Routes>
   );

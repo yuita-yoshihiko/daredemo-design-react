@@ -11,6 +11,7 @@ const Header: React.FC = () => {
   const USERMENU = [
     { label: '全てのお気に入り', to: '/design_tip/favorite' },
     { label: 'お気に入りリスト',   to: '/design_tip/list' },
+    { label: 'ユーザー登録',   to: '/sign_up' },
     { label: 'ログアウト',  to: '#' },
   ] as const;
   
