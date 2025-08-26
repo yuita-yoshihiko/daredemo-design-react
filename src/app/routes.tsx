@@ -7,6 +7,7 @@ import Color from '@/features/color/routes/Color';
 import Trip from '@/features/trip/routes/Trip';
 import DesignTip from '@/features/design_tips/routes/DesignTip';
 import FavoriteDesignTip from '@/features/design_tips/routes/FavoriteDesignTip';
+import ListDesignTip from '@/features/design_tips/routes/ListDesignTip';
 
 export function AppRoutes() {
   return (
@@ -19,6 +20,7 @@ export function AppRoutes() {
         <Route path="/trip" element={<Trip />} />
         <Route path="/design_tip" element={<DesignTip />} />
         <Route path="/design_tip/favorite" element={<FavoriteDesignTip />} />
+        <Route path="/design_tip/list" element={<ListDesignTip />} />
       </Route>
     </Routes>
   );
