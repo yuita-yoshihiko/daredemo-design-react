@@ -1,11 +1,9 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useQueryDesignTips } from "../hooks/useQueryDesignTips";
+import { useQueryCategories } from "../hooks/useQueryCategories";
 
 const DesignTip: React.FC = () => {
-  const fallbackTags = useMemo(
-    () => ["配色", "タイポグラフィ", "レイアウト", "UI/UX", "SEO", "マーケ"],
-    []
-  );
+  const { data: fallbackTags = [] } = useQueryCategories();
   const [activeTab, setActiveTab] = useState<0 | 1 | 2>(0);
   const { data: designTips = [] } = useQueryDesignTips();
 
@@ -15,12 +13,12 @@ const DesignTip: React.FC = () => {
       <div className="container mx-auto flex">
         {fallbackTags.map((tag) => (
           <a
-            key={tag}
+            key={tag.name}
             href="#"
             className="m-4 text-base font-serif text-gray-500 hover:text-emerald-600"
             onClick={(e) => e.preventDefault()}
           >
-            {tag}
+            {tag.name}
           </a>
         ))}
       </div>
