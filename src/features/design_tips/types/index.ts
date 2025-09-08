@@ -6,12 +6,16 @@ export type DesignTip = {
   categories: { name: string }[];
 };
 
+export type DesignTips = {
+  design_tips: DesignTip[];
+};
+
 export type Category = {
   name: string;
 };
 
-export type DesignTips = {
-  design_tips: DesignTip[];
+export type Categories = {
+  categories: Category[];
 };
 
 export type DesignTipType = {
