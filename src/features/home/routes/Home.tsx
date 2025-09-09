@@ -11,6 +11,7 @@ import responsiveImg from '@/assets/responsive.jpg';
 import seoImg from '@/assets/seo.jpg';
 import topImg from '@/assets/top.jpg';
 import uiUxImg from '@/assets/ui_ux.jpg';
+import { useQueryCategories } from "@/features/design_tips/hooks/useQueryCategories";
 
 // ---------- Types ----------
 type Ask = {
@@ -30,7 +31,6 @@ type DesignTip = {
 type HomeProps = {
   loggedIn?: boolean;
   asks?: Ask[];
-  tagList?: string[];
   recommendDesignTips?: DesignTip[];
   sortDesignTips?: DesignTip[];
 };
@@ -77,7 +77,6 @@ function DesignTipCard({ tip }: { tip: DesignTip }) {
 const Home: React.FC<HomeProps> = ({
   loggedIn = false,
   asks,
-  tagList,
   recommendDesignTips,
   sortDesignTips,
 }) => {
@@ -95,30 +94,33 @@ const Home: React.FC<HomeProps> = ({
     () => [
       {
         id: 1,
-        askDetail: "デザインのどこから学びたいですか？",
+        askDetail: "Web系のサービスやデザインの作成に関わった経験は？",
         responses: [
-          { id: 11, content: "基礎から" },
-          { id: 12, content: "手を動かして" },
-          { id: 13, content: "作ってみたい" },
+          { id: 11, content: "全くない" },
+          { id: 12, content: "少しはある" },
         ],
       },
       {
         id: 2,
-        askDetail: "興味のある分野は？",
+        askDetail: "デザインする際に重視したいのは？",
         responses: [
-          { id: 21, content: "UI/UX" },
-          { id: 22, content: "コーディング" },
-          { id: 23, content: "運用/SEO" },
+          { id: 21, content: "使いやすさ" },
+          { id: 22, content: "おしゃれさ" },
+        ],
+      },
+      {
+        id: 3,
+        askDetail: "学習スタイルは？",
+        responses: [
+          { id: 31, content: "まずは基本を抑える" },
+          { id: 32, content: "手を動かしながら覚える" },
         ],
       },
     ],
     []
   );
 
-  const fallbackTags = useMemo(
-    () => ["配色", "タイポグラフィ", "レイアウト", "UI/UX", "SEO", "マーケ"],
-    []
-  );
+  const { data: fallbackTags = [] } = useQueryCategories();
 
   const fallbackRecommend: DesignTip[] = useMemo(
     () => [
@@ -139,7 +141,6 @@ const Home: React.FC<HomeProps> = ({
   );
 
   const _asks = asks && asks.length ? asks : fallbackAsks;
-  const _tags = tagList && tagList.length ? tagList : fallbackTags;
   const _recommend = recommendDesignTips && recommendDesignTips.length ? recommendDesignTips : fallbackRecommend;
   const _sort = sortDesignTips && sortDesignTips.length ? sortDesignTips : fallbackSort;
 
@@ -259,14 +260,14 @@ const Home: React.FC<HomeProps> = ({
       <div className="my-12 hidden bg-zinc-100 shadow xl:block">
         <hr />
         <div className="container mx-auto flex">
-          {_tags.map((tag) => (
+          {fallbackTags.map((tag) => (
             <a
-              key={tag}
+              key={tag.name}
               href="#"
               className="m-4 text-base font-serif text-gray-500 hover:text-emerald-600"
               onClick={(e) => e.preventDefault()}
             >
-              {tag}
+              {tag.name}
             </a>
           ))}
         </div>
@@ -284,14 +285,14 @@ const Home: React.FC<HomeProps> = ({
             </button>
             {tagsOpen && (
               <ul className="mt-2 w-52 rounded-lg bg-white p-2 text-sm font-normal shadow">
-                {_tags.map((tag) => (
-                  <li key={tag}>
+                {fallbackTags.map((tag) => (
+                  <li key={tag.name}>
                     <a
                       href="#"
                       className="m-2 block font-serif text-base text-gray-500 hover:text-emerald-600"
                       onClick={(e) => e.preventDefault()}
                     >
-                      {tag}
+                      {tag.name}
                     </a>
                   </li>
                 ))}
