@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQueryDesignTips } from "../hooks/useQueryDesignTips";
 import { useQueryCategories } from "../hooks/useQueryCategories";
+import { GoHeart } from "react-icons/go";
 
 const DesignTip: React.FC = () => {
   const { data: fallbackTags = [] } = useQueryCategories();
@@ -67,8 +68,32 @@ const DesignTip: React.FC = () => {
                   {tip.guidance}
                 </div>
                 <div className="my-2 flex place-content-between">
-                  <div className="rounded-lg border-none text-slate-50 text-xs md:text-sm bg-gradient-to-r from-emerald-600 to-emerald-700 font-serif">
-                    {tip.categories.map((cat) => cat.name).join(", ")}
+                  <div className='flex gap-1 md:gap-3'>
+                    <div className="rounded-lg border-none text-slate-50 text-xs md:text-sm bg-gradient-to-r from-emerald-600 to-emerald-700 font-serif">
+                      {tip.categories.map((cat) => cat.name).join(", ")}
+                    </div>
+                  </div>
+                  <div className='flex gap-1 md:gap-2'>
+                    <div className='container'>
+                      <div className='flex items-center text-gray-300'>
+                        <GoHeart />
+                        お気に入り
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="my-2 flex place-content-between">
+                  <div className="flex text-sm gap-1 text-gray-500">評価 :
+                    <span className="star-rating">
+                      <span className="star-rating-front">★★★★★</span>
+                      <span className="star-rating-back">★★★★★</span>
+                    </span> 
+                    <div>〇〇点</div>
+                  </div>
+                  <div className="text-right text-gray-400 hover:bg-amber-100 rounded-lg">
+                    <label className="container text-gray-400 hover:bg-amber-100 rounded-lg flex items-center text-sm">
+                      <div>評価する</div>
+                    </label>
                   </div>
                 </div>
               </div>
