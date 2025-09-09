@@ -52,31 +52,24 @@ const DesignTip: React.FC = () => {
           .map((tip) => (
             <div
               key={tip.title}
-              className="my-12 bg-white flex shadow-lg flex-col rounded-lg border-2 border-green-700"
+              className="my-12 bg-white flex shadow-lg flex-col rounded-lg"
             >
-              <div className="bg-green-700 py-2 text-center font-serif text-sm text-white">
-                {tip.media === "web"
-                  ? "Webサイト"
-                  : tip.media === "book"
-                  ? "書 籍"
-                  : "動 画"}
-              </div>
               <div className="flex flex-col p-6 pt-8">
-                <div className="text-brand-brown text-xl font-serif hover:text-yellow-900 pt-4">
+                <a
+                  href={tip.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-brown text-xl font-serif hover:text-yellow-900 pt-4"
+                >
                   {tip.title}
-                </div>
+                </a>
                 <div className="mx-auto mb-8 px-8 text-center text-gray-600">
                   {tip.guidance}
                 </div>
-                <div className="mx-auto flex justify-center py-4">
-                  <a
-                    href={tip.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-sm font-serif font-light bg-green-700 hover:bg-green-600 text-white text-center rounded-lg"
-                  >
-                    詳細を見る
-                  </a>
+                <div className="my-2 flex place-content-between">
+                  <div className="rounded-lg border-none text-slate-50 text-xs md:text-sm bg-gradient-to-r from-emerald-600 to-emerald-700 font-serif">
+                    {tip.categories.map((cat) => cat.name).join(", ")}
+                  </div>
                 </div>
               </div>
             </div>
